@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#164773',
     alignItems: 'center',
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 100,
   },
   textoBotao: {
     color: 'white',
