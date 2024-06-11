@@ -16,8 +16,10 @@ export default function App() {
       <View style={styles.div}>
         <View style={styles.div2}>
           <Text style={styles.paragraph}>
-            Login
+            Bem vindo ao Buy Me
           </Text>
+          
+
           <TextInput
             style={styles.input}
             placeholder="Usuário"
@@ -39,6 +41,8 @@ export default function App() {
           />
         </View>
 
+        
+
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.textoBotao}>Entrar</Text>
         </TouchableOpacity>
@@ -56,14 +60,16 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   paragraph: {
-    margin: 24,
+    margin: 20,
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'center',
+    top:0,
+    color:'black'
   },
   input: {
-    margin: 10,
-    fontSize: 18,
+    margin: 5,
+    fontSize: 15,
+    fontFamily:'Arial' ,
     fontWeight: 'bold',
     backgroundColor: '#DEEFE7',
     width: 300,
@@ -71,18 +77,18 @@ const styles = StyleSheet.create({
     padding: 5, 
   },
   div: {
-    justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    height:'100%',
     maxWidth: 600,
-    backgroundColor: '#3D5A73',
+    backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
   },
   botao: {
     width: 200,
     margin: 20,
-    backgroundColor: '#164773',
+    backgroundColor: '#5F008C',
     alignItems: 'center',
     padding: 10,
     borderRadius: 100,
@@ -91,5 +97,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
-  }
+  },
+  
 });
