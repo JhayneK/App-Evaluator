@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import { Text, SafeAreaView, StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
-
-
-import { Card } from 'react-native-paper';
-
-
-import AssetExample from './components/AssetExample';
+import { Text, SafeAreaView, StyleSheet, TextInput, View, TouchableOpacity, Image } from 'react-native';
 
 export default function App() {
   const [login, setLogin] = useState('');
@@ -14,38 +8,42 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.div}>
-        <View style={styles.div2}>
-          <Text style={styles.paragraph}>
-            Bem vindo ao Buy Me
-          </Text>
-          
-
-          <TextInput
-            style={styles.input}
-            placeholder="Usuário"
-            placeholderTextColor="#455559"
-            value={login}
-            onChangeText={text => setLogin(text)}
-          />
+        <Image source={require('./assets/logo.jpeg')} style={styles.logo} />
+        <Text style={styles.paragraph}>
+          Bem vindo ao Buy Me
+        </Text>
+        <Text style={styles.entrarComText}>
+          Entrar com
+        </Text>
+        <View style={styles.socialButtonsContainer}>
+          <TouchableOpacity style={[styles.socialButton, styles.facebookButton]}>
+            <Text style={styles.textoBotaoSocial}>Facebook</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={[styles.socialButton, styles.googleButton]}>
+            <Text style={styles.textoBotaoSocial}>Google</Text>
+          </TouchableOpacity>
         </View>
-
-        <View style={styles.div3}>
-          
-          <TextInput
-            style={styles.input}
-            placeholder="Senha"
-            placeholderTextColor="#455559"
-            value={senha}
-            onChangeText={text => setSenha(text)}
-            secureTextEntry={true} 
-          />
-        </View>
-
-        
-
+        <TextInput
+          style={styles.input}
+          placeholder="Usuário"
+          placeholderTextColor="#455559"
+          value={login}
+          onChangeText={text => setLogin(text)}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          placeholderTextColor="#455559"
+          value={senha}
+          onChangeText={text => setSenha(text)}
+          secureTextEntry={true} 
+        />
         <TouchableOpacity style={styles.botao}>
           <Text style={styles.textoBotao}>Entrar</Text>
         </TouchableOpacity>
+        <Text style={styles.cadastrarText}>
+          Ainda não é cadastrado? <Text style={styles.cadastrarLink}>Cadastrar</Text>
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -54,40 +52,76 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#CACACA',
+    backgroundColor: 'white',
     padding: 8,
   },
+  logo: {
+    width: 100,
+    height: 100,
+    marginBottom: 20,
+  },
   paragraph: {
-    margin: 20,
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: 'bold',
-    top:0,
-    color:'black'
+    color: 'black',
+    textAlign: 'center',
+    marginVertical: 20,
+    marginBottom: 40,
+  },
+  entrarComText: {
+    fontSize: 12,
+    color: 'gray',
+    textAlign: 'center',
+    marginVertical: 10,
+  },
+  socialButtonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  socialButton: {
+    height: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 10,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+  },
+  facebookButton: {
+    backgroundColor: '#3b5998',
+  },
+  googleButton: {
+    backgroundColor: '#db4a39',
+  },
+  textoBotaoSocial: {
+    color: 'white',
+    fontWeight: 'bold',
   },
   input: {
-    margin: 5,
+    margin: 10,
     fontSize: 15,
-    fontFamily:'Arial' ,
+    fontFamily: 'Arial',
     fontWeight: 'bold',
     backgroundColor: '#DEEFE7',
     width: 300,
     textAlign: 'left',
-    padding: 5, 
+    height: 40,
+    padding: 5,
+    borderRadius: 10,
   },
   div: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height:'100%',
-    maxWidth: 600,
     backgroundColor: 'white',
     padding: 20,
     borderRadius: 10,
   },
   botao: {
     width: 200,
-    margin: 20,
+    margin: 30,
     backgroundColor: '#5F008C',
     alignItems: 'center',
     padding: 10,
@@ -98,5 +132,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
-  
+  cadastrarText: {
+    fontSize: 12,
+    color: 'gray',
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  cadastrarLink: {
+    color: 'blue',
+    textDecorationLine: 'underline',
+  },
 });
