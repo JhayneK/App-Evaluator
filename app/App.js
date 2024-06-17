@@ -8,7 +8,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.div}>
-        <Image source={require('./assets/logo.jpeg')} style={styles.logo} />
+        <Image source={require('./assets/logoSemFundo.png')} style={styles.logo} />
         <Text style={styles.paragraph}>
           Bem vindo ao Buy Me
         </Text>
